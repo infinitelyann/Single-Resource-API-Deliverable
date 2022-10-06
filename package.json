@@ -2,21 +2,23 @@
   "name": "single-resource-api-deliverable",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "seed": "node models/seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
-    "mongoose": "^6.6.4",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
+    "express-session": "^1.17.3",
+    "mongoose": "^6.6.3",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }
 }
