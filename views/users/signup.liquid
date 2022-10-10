@@ -1,0 +1,22 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+
+  <div class="container-sm">
+    {%- comment -%}
+      in a form, we have an action and a method, the action is the url endpoint, the method is the verb
+    {%- endcomment -%}
+    <form action="/users/signup" method="POST">
+      <fieldset>
+        <legend>Sign Up New User</legend>
+        <label class="form-label">Username:
+        </label>
+        <input class="form-control" type="text" name="username" placeholder="username" required>
+        <label class="form-label">Password:
+        </label>
+        <input class="form-control" type="password" name="password" placeholder="enter password" required>
+      </fieldset>
+      <input class="btn btn-success" type="submit" value="Create Account">
+    </form>
+  </div>
+
+{% endblock %}}

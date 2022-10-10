@@ -1,0 +1,64 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-md">
+    <article>
+      <h2>{{car.make}}
+      </h2>
+      <h4>
+        {% if car.quality %}
+          Quality
+        {% else %}
+          Clunker
+        {% endif %}
+      </h4>
+      <h4>The color of this car is:
+        {{car.color}}
+      </h4>
+      {% if car.owner == userId %}
+        <div class="btn-group">
+          {%- comment -%}
+            first button will send us to the edit page
+          {%- endcomment -%}
+          <a class="btn btn-primary" href="/cars/edit/{{car.id}}">Edit</a>
+          {%- comment -%}
+            the second button(which will actually be a form, will send a DELETE request)
+          {%- endcomment -%}
+          <form action="/cars/{{car.id}}?_method=DELETE" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      {% endif %}
+    </article>
+    <hr>
+    <h4>comments</h4>
+    <hr>
+    {% if loggedIn %}
+      <div class="col-md-6">
+        <form action="/comments/{{car.id}}" method="POST">
+          <fieldset>
+            <legend>Add Comment</legend>
+            <label class="form-label">comment:</label>
+            <input class="form-control" type="text" placeholder="enter your comment..." name="note" required>
+          </fieldset>
+          <input class="btn btn-success" type="submit" value="add comment">
+        </form>
+      </div>
+    {% else %}
+      <div class="col-md-6">
+        <small>If you'd like to leave a comment, please log in...</small>
+      </div>
+    {% endif %}
+    <hr>
+    {% if car.comments.length > 0%}
+      <div class="container-sm justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          {% for comment in car.comments %}
+            {% render '../comment.liquid', comment: comment, userId: userId, car: car %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <small>no comments yet...</small>
+    {% endif %}
+  </div>
+{% endblock %}}}}
