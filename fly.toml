@@ -11,7 +11,7 @@ processes = []
 [env]
   PORT = "8080"
   SECRET= "CeciliaHeartBreaker"
-  DEPLOYED_URL="mongodb+srv://saparker:043097@angstyblogcluster.gotapn1.mongodb.net/cars?retryWrites=true&w=majority"
+  DEPLOYED_URL="mongodb+srv://saparker:043097@cluster0.eiaca4j.mongodb.net/cars?retryWrites=true&w=majority"
 
 [experimental]
   allowed_public_ports = []
