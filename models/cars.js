@@ -1,6 +1,6 @@
 
 ///////////////////////////////////////////////////////////
-// Our schema and model for the fruit resource
+// Our schema and model for the car resource
 ///////////////////////////////////////////////////////////
 // this is the old mongoose import
 // const mongoose = require("mongoose") // import mongoose

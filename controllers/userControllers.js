@@ -82,7 +82,7 @@ router.post('/login', async (req, res) => {
                     // we'll send a 201 status and the user as json for now
                     // we'll change this later for security purposes
                     // res.status(201).json({ user: user.toObject() })
-                    res.redirect('/fruits')
+                    res.redirect('/cars')
                 } else {
                     // res.json({ error: 'username or password incorrect' })
                     res.redirect(`/error?error=username%20or%20password%20incorrect`)

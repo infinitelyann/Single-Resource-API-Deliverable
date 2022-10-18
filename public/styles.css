@@ -1,10 +1,26 @@
 body{
-    background-color: steelblue;
+    background-color: #3C4048;
+    color:white;
+    text-align: center;
 }
-
+.col-mb-4{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color:#00ABB3;
+}
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
 .card{
     margin: 5px;
-    width: 18rem;
-
-   
+    width: 18rem; 
 }
+.btn:hover{
+    background-color:#ADDDD0 ;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

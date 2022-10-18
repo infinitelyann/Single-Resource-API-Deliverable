@@ -1,36 +1,27 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-  <div class="container-sm">
-    {%- comment -%}
-      change the action
-    {%- endcomment -%}
-    {%- comment -%}
-      add values to input fields
-    {%- endcomment -%}
-    {%- comment -%}
-      add a back button
-    {%- endcomment -%}
-    <form action="/cars/{{cars.id}}?_method=PUT" method="POST">
-      <fieldset>
-        <legend>Edit
-          {{cars.make}}
-        </legend>
-        <label class="form-label">Make:
-        </label>
-        <input class="form-control" type="text" name="make" placeholder="enter the make of the car" value="{{ cars.make }}">
-        <label class="form-label">Color:
-        </label>
-        <input class="form-control" type="text" name="color" placeholder="what color is the cars?" value="{{ cars.color }}">
-        <label class="form-label">Quality
-        </label>
-        <input class="form-check-input" type="checkbox" name="quality"
-          {% if car.quality %}
-          checked
-          {% endif %}>
-      </fieldset>
-      <input class="btn btn-success" type="submit" value="Edit {{car.make}}">
-    </form>
-  </div>
+<div class="container-sm">
 
-{% endblock %}}}}}}}
+  <form action="/cars/{{cars.id}}?_method=PUT" method="POST">
+    <fieldset>
+      <legend>Edit
+        {{cars.make}}
+      </legend>
+      <label class="form-label">Make:
+      </label>
+      <input class="form-control" type="text" name="make" placeholder="enter the make of the car"
+        value="{{ cars.make }}">
+      <label class="form-label">Color:
+      </label>
+      <input class="form-control" type="text" name="color" placeholder="what color is the cars?"
+        value="{{ cars.color }}">
+      <label class="form-label">Quality
+      </label>
+      <input class="form-check-input" type="checkbox" name="quality" {% if car.quality %} checked {% endif %}>
+    </fieldset>
+    <input class="btn btn-outline-dark" type="submit" value="Edit {{car.make}}">
+  </form>
+</div>
+
+{% endblock %}

@@ -1,32 +1,32 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-  <div>
-    <h2 class="display-6">All Cars</h2>
-    <div class="row">
-      {% for car in cars %}
-        <div class="card">
-          <h5 class="card-header">{{car.make}}
-          </h5>
-          <div class="card-body">
-            <h5 class="card-title">
-              {% if car.quality %}
-                Nice
-              {% else %}
-                Clunker
-              {% endif %}
-            </h5>
-            <p class="card-text">The color of this
-              {{car.make}}
-              is
-              {{car.color}}
-            </p>
-            <a class="btn btn-info" href="/cars/{{car.id}}">
-              View
-              {{car.make}}
-            </a>
-          </div>
-        </div>
-      {% endfor %}
+<div>
+  <h2 class="display-6">All Cars</h2>
+  <div class="row">
+    {% for car in cars %}
+    <div class="card">
+      <h5 class="card-header">{{car.make}}
+      </h5>
+      <div class="card-body" style="background-color:{{car.color}}">
+        <h5 class="card-title">
+          {% if car.quality %}
+          Nice
+          {% else %}
+          Clunker
+          {% endif %}
+        </h5>
+        <p class="card-text">The color of this
+          {{car.make}}
+          is
+          {{car.color}}
+        </p>
+        <a class="btn btn-outline-dark" href="/cars/{{car.id}}">
+          View
+          {{car.make}}
+        </a>
+      </div>
     </div>
+    {% endfor %}
   </div>
+</div>
 {% endblock %}}}}}}
