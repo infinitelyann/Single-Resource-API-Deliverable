@@ -1,6 +1,6 @@
-# fly.toml file generated for icy-glitter-3466 on 2022-10-18T16:21:52-04:00
+# fly.toml file generated for fullstackcars on 2022-10-18T18:25:56-04:00
 
-app = "icy-glitter-3466"
+app = "fullstackcars"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -10,8 +10,6 @@ processes = []
 
 [env]
   PORT = "8080"
-  SECRET= "CeciliaHeartBreaker"
-  DEPLOYED_URL="mongodb+srv://saparker:043097@cluster0.eiaca4j.mongodb.net/cars?retryWrites=true&w=majority"
 
 [experimental]
   allowed_public_ports = []
